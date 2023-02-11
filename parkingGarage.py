@@ -11,8 +11,6 @@ class Parking_garage():
         self.parkingSpaces = list(range(1,self.num_spots_left))
         self.currentTicket = {}
         
-
-
 # cameron = Parking_garage('Cameron')
 # charlie = Parking_garage('Charlie')
 
