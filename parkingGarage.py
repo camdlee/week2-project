@@ -20,13 +20,16 @@ class Parking_garage():
 # When ticket is take, the number of parking spots should go down by 1
     def takeTicket(self):
         ticket_1 = input("Will you need a parking spot (Y/N)").lower()
-        if ticket_1 == 'y':
-            print('Here is your ticket')
-            self.num_spots_left -= 1
-            self.num_tickets_left -= 1
-            print(f'There are now {self.num_spots_left} spots left and {self.num_tickets_left} tickets left.')
+        if self.num_tickets_left <= 0:
+            print(f'There are no more parking spots available')
         else:
-            pass
+            if ticket_1 == 'y':
+                print('Here is your ticket')
+                self.num_spots_left -= 1
+                self.num_tickets_left -= 1
+                print(f'There are now {self.num_spots_left} spots left and {self.num_tickets_left} tickets left.')
+            else:
+                pass
 
 # cameron = Parking_garage('Cameron')
 # cameron.takeTicket()
@@ -60,7 +63,23 @@ class Parking_garage():
 # This will update the number of parking spots and # of tickets up by 1 
 
 #----------Runner Function---------
-    
+    def Runner(self):
+        while True:
+            choice = input("Will you need a parking spot or will you leave the parking spot: (1. Park), (2. Leave), (3. Quit): ")
+            if choice == "1":
+                self.takeTicket()
+            
+            elif choice == "2":
+                self.payForParking()
+
+            elif choice == "3":
+                break
+
+            else:
+                print("Invalid choice!")
+
+cameron = Parking_garage('Cameron')
+cameron.Runner()
 
 
 # Will need a few attributes as well:
