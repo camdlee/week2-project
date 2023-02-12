@@ -53,7 +53,7 @@ class Parking_garage():
                 # if payment input matches cost then change dictionary key-value
                 if payment == '10':
                     self.currentTicket[ticket_num] = True
-                    print('Your ticket has been paid. Thank you, have a nice day!')
+                    print('Your ticket has been paid, you have 15 minutes to leave. Thank you, have a nice day!')
                     # trigger leave parking garage function
                     self.leave_garage()
                     break
@@ -69,7 +69,7 @@ class Parking_garage():
 # Ask the user for their ticket number
     def leave_garage(self):
         print('----------EXIT MENU---------')
-        ticket_num = input('What is your ticket number?')
+        ticket_num = input('What is your ticket number? ')
         # check to see if ticket number is in list
         if ticket_num in self.tickets:
         #check to see if ticket_num in dictionary is true
@@ -107,8 +107,8 @@ class Parking_garage():
 
 
 
-# ten = Parking_garage(10)
-# ten.runner()
+ten = Parking_garage(10)
+ten.runner()
 
 #twenty = Parking_garage(20)
 #twenty.runner()
